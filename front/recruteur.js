@@ -1,5 +1,6 @@
 // Configuration de l'API
 const API_URL = 'http://localhost:8000/api';
+const API_KEY = '123';
 
 // Éléments du DOM
 const btnGetRecruiters = document.getElementById('btn-get-recruiters');
@@ -10,6 +11,35 @@ const inputRecruiterId = document.getElementById('input-recruteur');
 const inputDeleteRecruiterId = document.getElementById('recruiterId');
 const allRecruitersSection = document.getElementById('all-recruiters');
 const recruiterByIdSection = document.getElementById('recruiter-by-id');
+
+// Fonction pour charger la clé API de façon sécurisée (à exécuter au démarrage)
+async function loadApiKey() {
+    try {
+        // Option 1: Récupérer la clé API depuis un endpoint sécurisé
+        const response = await fetch('/get-api-key', {
+            credentials: 'same-origin' // Important pour la sécurité - envoie les cookies
+        });
+        
+        if (!response.ok) {
+            throw new Error('Impossible de récupérer la clé API');
+        }
+        
+        const data = await response.json();
+        API_KEY = data.apiKey;
+        
+        console.log('Clé API chargée avec succès');
+    } catch (error) {
+        console.error('Erreur lors du chargement de la clé API:', error);
+    }
+}
+
+// Fonction pour créer les en-têtes avec authentification
+function getHeaders() {
+    return {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`
+    };
+}
 
 // Fonction pour afficher un message d'erreur
 function showError(message, container) {
@@ -25,7 +55,9 @@ async function getAllRecruiters() {
     try {
         allRecruitersSection.innerHTML = '<p>Chargement en cours...</p>';
         
-        const response = await fetch(`${API_URL}/recruiters`);
+        const response = await fetch(`${API_URL}/recruiters`, {
+            headers: getHeaders()
+        });
         
         if (!response.ok) {
             throw new Error(`Erreur HTTP: ${response.status}`);
@@ -71,7 +103,9 @@ async function getRecruiterById(id) {
         
         recruiterByIdSection.innerHTML = '<p>Chargement en cours...</p>';
         
-        const response = await fetch(`${API_URL}/recruiters/${id}`);
+        const response = await fetch(`${API_URL}/recruiters/${id}`, {
+            headers: getHeaders()
+        });
         
         if (!response.ok) {
             if (response.status === 404) {
@@ -122,9 +156,7 @@ async function addRecruiter(event) {
         
         const response = await fetch(`${API_URL}/recruiters`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: getHeaders(),
             body: JSON.stringify(recruiterData)
         });
         
@@ -162,7 +194,8 @@ async function deleteRecruiter() {
         }
         
         const response = await fetch(`${API_URL}/recruiters/${id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: getHeaders()
         });
         
         if (!response.ok) {
