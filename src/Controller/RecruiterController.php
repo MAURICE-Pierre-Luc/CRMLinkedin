@@ -216,7 +216,7 @@ class RecruiterController extends AbstractController
 
     private function checkKey(Request $request): bool
     {
-        $providedKey = $request->query->get('key');
+        $providedKey = $request->query->get('X-API-KEY');
         $expectedKey = $_ENV['API_ACCESS_KEY'] ?? 'default_key';
 
         return $providedKey === $expectedKey;
