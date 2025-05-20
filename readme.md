@@ -60,18 +60,18 @@ Ou avec PHP directement :
 
 Structure du projet
 
-    ```bash bin/ ```: Scripts exécutables, notamment la console Symfony
+    bin/ : Scripts exécutables, notamment la console Symfony
 
-    ```bash config/ ```: Fichiers de configuration de l'application
+    config/ : Fichiers de configuration de l'application
 
-    ```bash migrations/ ```: Fichiers de migration de la base de données
+    migrations/ : Fichiers de migration de la base de données
 
-    ```bash public/ ```: Répertoire public accessible via le serveur web
+    public/ : Répertoire public accessible via le serveur web
 
-    ```bash src/ ```: Code source principal de l'application
+    src/ : Code source principal de l'application
 
-    ```bash templates/ ```: Fichiers de templates Twig pour les vues
+    templates/ : Fichiers de templates Twig pour les vues
 
-    ```bash front/ ```: Contenu front-end (à confirmer selon le projet)
+    front/ : Contenu front-end (à confirmer selon le projet)
 
-    ```bash .env ```: Fichier de configuration des variables d'environnement
+    .env : Fichier de configuration des variables d'environnement
