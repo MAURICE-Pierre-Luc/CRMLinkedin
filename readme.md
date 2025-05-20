@@ -43,12 +43,10 @@ Lancer le serveur de développement
 
 Utilisez la CLI Symfony pour démarrer le serveur :
 
-symfony server:start
-
-Ou avec PHP directement :
 ```bash
-php -S localhost:8000 -t public
+symfony server:start
 ```
+
 Accéder à l'application
 
 Ouvrez votre navigateur et rendez-vous sur : http://localhost:8000
