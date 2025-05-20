@@ -10,3 +10,4 @@ vendor
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+database.sql
