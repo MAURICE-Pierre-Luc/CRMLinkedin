@@ -52,7 +52,7 @@ symfony server:start
 
 Ou avec PHP directement :
 ```bash
-    php -S localhost:8000 -t public
+php -S localhost:8000 -t public
 ```
 Accéder à l'application
 
