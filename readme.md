@@ -54,9 +54,9 @@ Ou avec PHP directement :
 ```bash
     php -S localhost:8000 -t public
 ```
-    Accéder à l'application
+Accéder à l'application
 
-    Ouvrez votre navigateur et rendez-vous sur : http://localhost:8000
+Ouvrez votre navigateur et rendez-vous sur : http://localhost:8000
 
 Structure du projet :
 
