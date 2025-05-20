@@ -39,7 +39,7 @@ php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 ```
 
-Lancer le serveur de développement
+5. **Lancer le serveur de développement**
 
 Utilisez la CLI Symfony pour démarrer le serveur :
 
@@ -47,7 +47,7 @@ Utilisez la CLI Symfony pour démarrer le serveur :
 symfony server:start
 ```
 
-Accéder à l'application
+6. **Accéder à l'application**
 
 Ouvrez votre navigateur et rendez-vous sur : http://localhost:8000
 
