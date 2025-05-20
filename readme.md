@@ -39,11 +39,6 @@ php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 ```
 
-Si un fichier database.sql est fourni, vous pouvez l'importer directement :
-
-```bash
-psql -U votre_utilisateur -d votre_base_de_donnees -f database.sql
-```
 Lancer le serveur de développement
 
 Utilisez la CLI Symfony pour démarrer le serveur :
