@@ -58,20 +58,20 @@ Ou avec PHP directement :
 
     Ouvrez votre navigateur et rendez-vous sur : http://localhost:8000
 
-Structure du projet
+Structure du projet :
 
-    bin/ : Scripts exécutables, notamment la console Symfony
+bin/ : Scripts exécutables, notamment la console Symfony
 
-    config/ : Fichiers de configuration de l'application
+config/ : Fichiers de configuration de l'application
 
-    migrations/ : Fichiers de migration de la base de données
+migrations/ : Fichiers de migration de la base de données
 
-    public/ : Répertoire public accessible via le serveur web
+public/ : Répertoire public accessible via le serveur web
 
-    src/ : Code source principal de l'application
+src/ : Code source principal de l'application
 
-    templates/ : Fichiers de templates Twig pour les vues
+templates/ : Fichiers de templates Twig pour les vues
 
-    front/ : Contenu front-end (à confirmer selon le projet)
+front/ : Contenu front-end (à confirmer selon le projet)
 
-    .env : Fichier de configuration des variables d'environnement
+.env : Fichier de configuration des variables d'environnement
